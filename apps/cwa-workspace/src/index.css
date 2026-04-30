@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-cwa-paper text-cwa-ink font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background-color: rgba(26, 107, 60, 0.18);
+  }
+}
+
+@layer components {
+  .prose-cwa h2 {
+    @apply text-[26px] leading-tight font-bold mt-10 mb-3 text-cwa-ink;
+  }
+  .prose-cwa h3 {
+    @apply text-[19px] leading-snug font-semibold mt-8 mb-2 text-cwa-ink;
+  }
+  .prose-cwa p {
+    @apply text-[15px] leading-7 text-cwa-slate mb-3;
+  }
+  .prose-cwa ul {
+    @apply text-[15px] leading-7 text-cwa-slate mb-3 list-disc pl-6;
+  }
+  .prose-cwa li {
+    @apply mb-1;
+  }
+  .prose-cwa strong {
+    @apply text-cwa-ink font-semibold;
+  }
+  .prose-cwa code {
+    @apply font-mono text-[13px] bg-cwa-surface border border-cwa-border rounded px-1.5 py-0.5;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 px-2.5 py-1.5 rounded-md text-[13.5px] text-cwa-slate hover:bg-cwa-surface transition-colors;
+  }
+  .nav-link.active {
+    @apply bg-cwa-green-soft text-cwa-green-deep font-medium;
+  }
+  .nav-section-label {
+    @apply px-2.5 pt-4 pb-1 text-[11px] font-semibold tracking-wider uppercase text-cwa-muted;
+  }
+}
